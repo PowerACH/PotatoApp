@@ -1,12 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
 .App {
   text-align: center;
 }
 
-.main-card {
+.main-container {
   border: 2px solid black;
   width: 663px;
   height: 500px;
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 5%;
+}
+
+.main-card {
+  padding-top: 60px;
+  font-family: 'Prata', serif;
+}
+
+.main-header {
+  font-size: 70px;
 }
