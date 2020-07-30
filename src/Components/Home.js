@@ -7,16 +7,6 @@ import NavBar from '../Components/NavBar'
 
 
 export default class Home extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            active: true
-        };
-    }
-
-    handleMenu() {
-        this.setState({active: false})
-    }
 
     render() {
         return (
@@ -31,7 +21,7 @@ export default class Home extends React.Component {
                     <br />
                     
                     <Link to = "/SearchRecipes" ><Button variant="dark" onClick={this.handleMenu}>Search Recipes</Button></Link>{' '}
-                    <Button variant="outline-success">Get Started</Button>{' '}
+                    <Link to = "/GetStarted"><Button variant="outline-success">Get Started</Button></Link>{' '}
                 </div>
             </div>
         )
