@@ -1,10 +1,23 @@
 import React from 'react';
 import { Button } from 'react-bootstrap'
 import '../App.css'
+import { Link } from 'react-router-dom'
+import NavBar from '../Components/NavBar'
 
 
 
 export default class Home extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            active: true
+        };
+    }
+
+    handleMenu() {
+        this.setState({active: false})
+    }
+
     render() {
         return (
             <div className = "main-container">
@@ -16,7 +29,8 @@ export default class Home extends React.Component {
                         <h2>The best source for easy meal recipes.</h2>
                     </div>
                     <br />
-                    <Button variant="dark">Search Recipes</Button>{' '}
+                    
+                    <Link to = "/SearchRecipes" ><Button variant="dark" onClick={this.handleMenu}>Search Recipes</Button></Link>{' '}
                     <Button variant="outline-success">Get Started</Button>{' '}
                 </div>
             </div>
