@@ -25,3 +25,9 @@
 .nav-logo {
   font-family: 'Prata', serif;
 }
+
+.mb-3 {
+  width: 75%;
+  margin-left: 10%;
+  padding: 20px;
+}
