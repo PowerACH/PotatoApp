@@ -53,7 +53,7 @@ export default class SearchBar extends React.Component {
     
     enter = target => {
         if(target.charCode === 13) {
-            console.log('fired')
+            this.handleSearch()
         }
     }
 }
