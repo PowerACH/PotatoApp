@@ -8,9 +8,9 @@ export default class SearchBar extends React.Component {
     constructor() {
         super();
         this.state = {
-            keyword: "",
-            recipe: {},
-            count: 0
+            keyword: "", //search value
+            recipe: {}, //recipe results
+            count: 0 //number of results found
         }
     }
 
@@ -32,8 +32,8 @@ export default class SearchBar extends React.Component {
         axios.get('https://www.themealdb.com/api/json/v1/1/search.php?s=' + this.state.keyword)
         .then((data => {
             console.log(data.data.meals);
-            this.setState({recipe: data.data.meals})
-            this.setState({count: this.state.recipe.length})
+            this.setState({recipe: data.data.meals}) //change state of recipe 
+            this.setState({count: this.state.recipe.length}) //change state of count
             console.log(this.state)
         }))
         
