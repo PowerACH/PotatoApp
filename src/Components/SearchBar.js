@@ -11,12 +11,12 @@ export default class SearchBar extends React.Component {
         }
     }
 
-    componentDidMount() {
-        document.addEventListener('keypress', this.enter);
+    componentDidMount() { 
+        document.addEventListener('keypress', this.enter);//makes the enter key listener active
     }
 
     componentWillUnmount() {
-        document.removeEventListener('keypress', this.enter);
+        document.removeEventListener('keypress', this.enter); //deactivates the key listener
     }
 
     //create a function for search bar to search
@@ -51,9 +51,10 @@ export default class SearchBar extends React.Component {
         )
     }
     
+    //Function for the ENTER key listener 
     enter = target => {
         if(target.charCode === 13) {
-            this.handleSearch()
+            this.handleSearch(target) 
         }
     }
 }
