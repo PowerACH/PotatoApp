@@ -16,8 +16,6 @@ export default class SearchBar extends React.Component {
 
     componentDidMount = () => { 
         document.addEventListener('keypress', this.enter);//makes the enter key listener active 
-
-
     }
 
     componentWillUnmount() {
