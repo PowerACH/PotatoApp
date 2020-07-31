@@ -32,3 +32,21 @@
   padding: 20px;
 }
 
+/* Search Results */
+
+.search-results {
+  list-style: none;
+}
+
+.result-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.result-list img {
+  width: 300px;
+  border: 3px black solid;
+}
