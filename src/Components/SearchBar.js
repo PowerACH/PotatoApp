@@ -11,6 +11,14 @@ export default class SearchBar extends React.Component {
         }
     }
 
+    componentDidMount() {
+        document.addEventListener('keypress', this.enter);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keypress', this.enter);
+    }
+
     //create a function for search bar to search
     handleSearch = event => {
         console.log(this.state)
@@ -41,5 +49,11 @@ export default class SearchBar extends React.Component {
             </InputGroup.Append>
           </InputGroup>
         )
+    }
+    
+    enter = target => {
+        if(target.charCode === 13) {
+            console.log('fired')
+        }
     }
 }
