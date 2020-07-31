@@ -10,7 +10,7 @@ export default class SearchBar extends React.Component {
         super();
         this.state = {
             keyword: "", //search value
-            recipe: {}, //recipe results
+            recipe: [], //recipe results
             count: 0 //number of results found
         }
     }
@@ -46,22 +46,8 @@ export default class SearchBar extends React.Component {
         }); 
     }
 
-    
-        // resultsFunc = () => { 
-        // const keyword = this.state.keyword;
-        // const count = this.state.count
-        // if (keyword.length > 0 && count > 1) {
-        //     document.getElementById("results-found").innerHTML = `${this.state.count} recipes found`
-        // } else if (keyword.length > 0 && count === 1) {
-        //     document.getElementById("results-found").innerHTML = `${this.state.count} recipe found`
-        // } else if (keyword.length > 0 && count === 0) {
-        //     document.getElementById("results-found").innerHTML = "no recipes found" }
-        // // } else {
-        // //     document.getElementById("results-found").innerHTML = "search for a recipe"
-        // // }
-        // }
-
     render() {
+        console.log(this.state)
         return (
         <div>
             {/* //Search Bar (Bootstrap) */}
@@ -83,6 +69,15 @@ export default class SearchBar extends React.Component {
           </div>
                 {
                     
+                    this.state.recipe.map((recipe, i) => {
+                        console.log(this.state.recipe)
+                        return (
+                            <li className = "search-results" key={i} >
+                                <img src={recipe.strMealThumb} alt = "recipe" />
+                                <h5>{recipe.strMeal}</h5>
+                            </li>
+                        )
+                    })
                 }
           </div>
         )

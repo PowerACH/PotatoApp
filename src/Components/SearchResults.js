@@ -4,8 +4,8 @@ export default class SearchResults extends Component {
     render() {
         return (
             <li className = "search-results">
-                <img src={meals.strMealThumb} alt = "recipe" />
-                <h5>{meal.strMeal}</h5>
+                <img src={this.strMealThumb} alt = "recipe" />
+                <h5>{this.strMeal}</h5>
             </li>
         )
     }
