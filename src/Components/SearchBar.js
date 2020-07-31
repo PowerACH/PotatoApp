@@ -9,7 +9,8 @@ export default class SearchBar extends React.Component {
         super();
         this.state = {
             keyword: "",
-            data: []
+            recipe: [],
+            count: ''
         }
     }
 
@@ -26,9 +27,13 @@ export default class SearchBar extends React.Component {
     //a function for search bar to search
     handleSearch = event => {
         event.preventDefault();
-        console.log(this.state)
-        axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${this.state}`)
+        console.log(this.state.keyword)
         
+        axios.get('https://www.themealdb.com/api/json/v1/1/search.php?s=' + this.state.keyword)
+        .then(data => console.log(data.data.meals))
+        // .then(res => this.setState({recipe: res.json()}))
+        // .catch(error => console.error( error.message ))
+        // console.log(this.state.recipe)
     }
     
     //a function to assign value to keyword
