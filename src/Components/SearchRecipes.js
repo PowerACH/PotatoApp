@@ -3,6 +3,7 @@ import '../App.css';
 import { InputGroup, FormControl, Button} from 'react-bootstrap'
 import axios from 'axios'
 
+
 //Search bar for Search Recipes component
 export default class SearchBar extends React.Component {
     constructor() {
@@ -45,9 +46,22 @@ export default class SearchBar extends React.Component {
         }); 
     }
 
+    
+        // resultsFunc = () => { 
+        // const keyword = this.state.keyword;
+        // const count = this.state.count
+        // if (keyword.length > 0 && count > 1) {
+        //     document.getElementById("results-found").innerHTML = `${this.state.count} recipes found`
+        // } else if (keyword.length > 0 && count === 1) {
+        //     document.getElementById("results-found").innerHTML = `${this.state.count} recipe found`
+        // } else if (keyword.length > 0 && count === 0) {
+        //     document.getElementById("results-found").innerHTML = "no recipes found" }
+        // // } else {
+        // //     document.getElementById("results-found").innerHTML = "search for a recipe"
+        // // }
+        // }
 
     render() {
-                    console.log(this.state)
         return (
         <div>
             {/* //Search Bar (Bootstrap) */}
@@ -65,8 +79,11 @@ export default class SearchBar extends React.Component {
           </InputGroup>
 
           <div>
-                <h1>hello</h1>
+                <h1 className = "results-found">{this.state.count} recipes found</h1>
           </div>
+                {
+                    
+                }
           </div>
         )
     }
