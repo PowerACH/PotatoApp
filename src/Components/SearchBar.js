@@ -1,34 +1,39 @@
 import React from 'react';
 import '../App.css';
 import { InputGroup, FormControl, Button} from 'react-bootstrap'
+import axios from 'axios'
 
 //Search bar for Search Recipes component
 export default class SearchBar extends React.Component {
     constructor() {
         super();
         this.state = {
-            keyword: ""
+            keyword: "",
+            data: []
         }
     }
 
-    componentDidMount() { 
-        document.addEventListener('keypress', this.enter);//makes the enter key listener active
+    componentDidMount = () => { 
+        document.addEventListener('keypress', this.enter);//makes the enter key listener active 
+
+
     }
 
     componentWillUnmount() {
         document.removeEventListener('keypress', this.enter); //deactivates the key listener
     }
 
-    //create a function for search bar to search
+    //a function for search bar to search
     handleSearch = event => {
-        console.log(this.state)
         event.preventDefault();
+        console.log(this.state)
+        axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${this.state}`)
+        
     }
-    //create a function to assign value to keyword
+    
+    //a function to assign value to keyword
     handleChange = event => {
-        this.setState({
-            [event.target.id]: event.target.value
-           
+        this.setState({[event.target.id]: event.target.value
         }); 
     }
 
