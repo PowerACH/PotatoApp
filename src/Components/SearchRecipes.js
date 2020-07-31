@@ -67,6 +67,7 @@ export default class SearchBar extends React.Component {
           <div>
                 <h1 className = "results-found">{this.state.count} recipes found</h1>
           </div>
+          <div className = "result-list">
                 {
                     
                     this.state.recipe.map((recipe, i) => {
@@ -79,6 +80,7 @@ export default class SearchBar extends React.Component {
                         )
                     })
                 }
+                </div>
           </div>
         )
     }
