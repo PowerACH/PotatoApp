@@ -20,7 +20,7 @@ export default class SearchRecipes extends React.Component {
     }
 
     render() {
-        console.log(recipes)
+        console.log(this.state)
         return (
             <div>
                 <SearchBar />
