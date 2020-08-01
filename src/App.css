@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
+/* Home Component */
 .App {
   text-align: center;
 }
@@ -45,7 +46,7 @@
   padding: 20px;
 }
 
-/* Search Results */
+/* Search Results Component*/
 
 .search-results {
   list-style: none;
