@@ -51,6 +51,10 @@
   border: 3px black solid;
 }
 
+.search-results h5 {
+  padding-top: 10px;
+}
+
 .search-bar {
   background-image: url(https://elvino.co.uk/wp-content/uploads/2016/03/Food-banner-2-700x232.jpg);
 }
