@@ -9,6 +9,7 @@ export default class Home extends React.Component {
 
     render() {
         return (
+        <div className = "home-container">
             <div className = "main-container">
                 <div className = "main-card">
                     <div className = "main-header">
@@ -23,6 +24,7 @@ export default class Home extends React.Component {
                     <Link to = "/GetStarted"><Button variant="outline-success">Get Started</Button></Link>{' '}
                 </div>
             </div>
+        </div>
         )
     }
 }
