@@ -4,7 +4,7 @@ import { InputGroup, FormControl, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-
+const BASE_API = "https://www.themealdb.com/api/json/v1/1"
 //Search bar for Search Recipes component
 export default class SearchBar extends React.Component {
     constructor() {
@@ -12,7 +12,8 @@ export default class SearchBar extends React.Component {
         this.state = {
             keyword: "", //search value
             recipe: [], //recipe results
-            count: 0 //number of results found
+            count: 0, //number of results found
+            id: ''
         }
     }
 
@@ -29,7 +30,7 @@ export default class SearchBar extends React.Component {
         event.preventDefault();
         // console.log(this.state.keyword)
         
-        axios.get('https://www.themealdb.com/api/json/v1/1/search.php?s=' + this.state.keyword)
+        axios.get(`${BASE_API}/search.php?s=` + this.state.keyword)
         .then((data => {
             // console.log(data.data.meals);
             this.setState({recipe: data.data.meals}) //change state of recipe 
@@ -76,7 +77,11 @@ export default class SearchBar extends React.Component {
                         console.log(recipe.idMeal)
                         return (
                             <li className = "search-results" key={i} >
-                            <Link to={recipe.idMeal}>
+                            <Link to={{
+                                pathname: `/recipe/${recipe.idMeal}` ,
+                                state: {
+                                    id: recipe.idMeal,
+                                }}}>
                                 <img src={recipe.strMealThumb} alt = "recipe" />
                                 </Link>
                                 <h5>{recipe.strMeal}</h5>
