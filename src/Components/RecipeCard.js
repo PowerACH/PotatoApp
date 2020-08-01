@@ -6,12 +6,12 @@ export default class RecipeCard extends Component {
     componentDidMount(){
         const {id} = this.props.match.params;
         axios.get('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + id)
-            .then(res => { this.setState({ id: res.data })})
+            .then(res => { this.setState({ recipe: res.data.meals[0] })})
             console.log(id)
     }
     
     render() {
-        console.log(this.state.id.meals)
+        console.log(this.state.idMeal)
         return (
             <div className = "single-meal-container">
             <h1>recipe goes here</h1>
