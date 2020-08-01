@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { InputGroup, FormControl, Button} from 'react-bootstrap'
+import { InputGroup, FormControl, Button, Link} from 'react-bootstrap'
 import axios from 'axios'
 
 
@@ -26,7 +26,7 @@ export default class SearchBar extends React.Component {
     //a function for search bar to search
     handleSearch = event => {
         event.preventDefault();
-        console.log(this.state.keyword)
+        // console.log(this.state.keyword)
         
         axios.get('https://www.themealdb.com/api/json/v1/1/search.php?s=' + this.state.keyword)
         .then((data => {
@@ -47,7 +47,7 @@ export default class SearchBar extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         return (
     <div>        
         <div className="search-bar">
@@ -72,10 +72,14 @@ export default class SearchBar extends React.Component {
                 {
                     
                     this.state.recipe.map((recipe, i) => {
+                        console.log(recipe.idMeal)
                         return (
                             <li className = "search-results" key={i} >
+                            <Link to={recipe.idMeal}>
                                 <img src={recipe.strMealThumb} alt = "recipe" />
+                                </Link>
                                 <h5>{recipe.strMeal}</h5>
+                                
                             </li>
                         )
                     })
