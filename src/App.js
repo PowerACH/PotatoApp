@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import SearchRecipes from './Components/SearchRecipes';
 import NavBar from './Components/NavBar';
 import GetStarted from './Components/GetStarted'
+import RecipeCard from './Components/RecipeCard';
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path="/GetStarted">
           <GetStarted />
+        </Route>
+        <Route path="recipe.idMeal">
+          <RecipeCard />
         </Route>
         <Route path="*" component={Home} />
       </Switch>
