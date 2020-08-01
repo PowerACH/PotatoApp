@@ -1,8 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class RecipeCard extends Component {
     state = {
-        id: ""
+        id: []
+    }
+
+    componentDidMount(){
+        let id = this.props.match.params.id
+        axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+            .then(res => { this.setState({ is: res.data })})
+            console.log(res)
     }
     
     render() {
