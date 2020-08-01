@@ -49,7 +49,8 @@ export default class SearchBar extends React.Component {
     render() {
         console.log(this.state)
         return (
-        <div>
+    <div>        
+        <div className="search-bar">
             {/* //Search Bar (Bootstrap) */}
         <InputGroup size="lg" className="mb-3" >
             <FormControl
@@ -60,10 +61,10 @@ export default class SearchBar extends React.Component {
               onChange={this.handleChange} 
             />
             <InputGroup.Append>
-              <Button variant="outline-secondary" onClick={this.handleSearch}>Search Recipes</Button>
+              <Button variant="outline-secondary" onClick={this.handleSearch}>search recipes</Button>
             </InputGroup.Append>
           </InputGroup>
-
+            </div>
           <div>
                 <h1 className = "results-found">{this.state.count} recipes found</h1>
           </div>
@@ -71,7 +72,6 @@ export default class SearchBar extends React.Component {
                 {
                     
                     this.state.recipe.map((recipe, i) => {
-                        console.log(this.state.recipe)
                         return (
                             <li className = "search-results" key={i} >
                                 <img src={recipe.strMealThumb} alt = "recipe" />
