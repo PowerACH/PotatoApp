@@ -13,9 +13,21 @@
   margin-top: 5%;
 }
 
+.home-container {
+  border: 2px solid black;
+  height: 660px;
+  background-repeat: no-repeat;
+  background-size: 50em;
+  background-size: cover;
+  background-image: url(https://images.unsplash.com/photo-1508313880080-c4bef0730395?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
+
+
+}
+
 .main-card {
   padding-top: 60px;
   font-family: 'Prata', serif;
+  
 }
 
 .main-header {
@@ -58,3 +70,4 @@
 .search-bar {
   background-image: url(https://elvino.co.uk/wp-content/uploads/2016/03/Food-banner-2-700x232.jpg);
 }
+
