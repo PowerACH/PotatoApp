@@ -23,9 +23,7 @@ function App() {
         <Route path="/GetStarted">
           <GetStarted />
         </Route>
-        <Route path="recipe.idMeal">
-          <RecipeCard />
-        </Route>
+        <Route exact path="/recipe/:id" component={RecipeCard} />
         <Route path="*" component={Home} />
       </Switch>
       </div>
