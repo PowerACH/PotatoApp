@@ -24,7 +24,7 @@ export default class RecipeCard extends Component {
             if (meal[`strIngredient${i}`]) {
                 //will push to the new ingredients array
                 ingredients.push(
-                    `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
+                    `${meal[`strMeasure${i}`]}  ${meal[`strIngredient${i}`]}`
                 );
             } else {
                 //loop will stop when there is no ingredient measure pair.
@@ -42,7 +42,10 @@ export default class RecipeCard extends Component {
                 <div className = "ingredient-list">
                     <h5>Ingredients: </h5>
                     <ul>
-                        
+                        {
+                            ingredients.map(ingredient => 
+                            <li>{ingredient}</li>)
+                        }
                     </ul>
                 </div>
                 
