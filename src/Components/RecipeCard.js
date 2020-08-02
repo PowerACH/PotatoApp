@@ -2,25 +2,50 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class RecipeCard extends Component {
+    state = {
+        recipe: []
+    }
 
     componentDidMount(){
         const {id} = this.props.match.params;
         axios.get('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + id)
             .then(res => { this.setState({ recipe: res.data.meals[0] })})
-            console.log(id)
+            // console.log(this.state)
+
     }
-    
+
     render() {
-        console.log(this.state.idMeal)
+        let meal = this.state.recipe
+        console.log(meal.strCategory)
+
+        const ingredients = []
+        //each recipe has up to 20 ingredients. This will loop through them all..
+        for (let i = 1; i <= 20; i++) {
+            if (meal[`strIngredient${i}`]) {
+                //will push to the new ingredients array
+                ingredients.push(
+                    `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
+                );
+            } else {
+                //loop will stop when there is no ingredient measure pair.
+                break;
+            }
+            }
         return (
             <div className = "single-meal-container">
-            <h1>recipe goes here</h1>
+            <div className = "single-meal-name">
+                    <h1>{meal.strMeal}</h1>
+                </div>
                 <div className = "single-meal-image">
-                    <img src={this.strMealThumb}/>
+                    <img src={meal.strMealThumb} alt="meal"/>
                 </div>
-                <div className = "single-meal-name">
-                    <h1>{this.strMeal}</h1>
+                <div className = "ingredient-list">
+                    <h5>Ingredients: </h5>
+                    <ul>
+                        
+                    </ul>
                 </div>
+                
 
             </div>
         )
