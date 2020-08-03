@@ -46,14 +46,14 @@ export default class RecipeCard extends Component {
                             <li key={i}>{ingredient}</li>)
                         }
                     </ul>
-                    <h5><strong>Culture: </strong> {meal.strArea}</h5>
-                    <h5><strong>Category: </strong> {meal.strCategory}</h5>
+                    
                 </div>  
                 </Col>
                 </Row>
                 <div className="meal-instructions">
                 <p>{meal.strInstructions}</p>
                 </div>
+                <h6><strong>Culture: </strong> {meal.strArea} <strong>Category: </strong> {meal.strCategory}</h6>
             </Container>
         )
     }
