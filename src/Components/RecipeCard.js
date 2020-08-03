@@ -16,8 +16,7 @@ export default class RecipeCard extends Component {
 
     render() {
         let meal = this.state.recipe
-        console.log(meal.strCategory)
-
+    
         const ingredients = []
         //each recipe has up to 20 ingredients. This will loop through them all..
         for (let i = 1; i <= 20; i++) {
@@ -40,20 +39,26 @@ export default class RecipeCard extends Component {
                     <img src={meal.strMealThumb} alt="meal"/>
                 </div>
                 <div className = "ingredient-list">
-                    <h5>Ingredients: </h5>
+                    <h5><strong>Ingredients: </strong></h5>
                     <ul>
                         {
-                            ingredients.map(ingredient => 
-                            <li>{ingredient}</li>)
+                            ingredients.map((ingredient,i) => 
+                            <li key={i}>{ingredient}</li>)
                         }
                     </ul>
-                    <h5><span>Culture: </span> {meal.strArea}</h5>
-                    <h5><span>Category: </span> {meal.strCategory}</h5>
+                    <h5><strong>Culture: </strong> {meal.strArea}</h5>
+                    <h5><strong>Category: </strong> {meal.strCategory}</h5>
                 </div>
                 <div className="meal-instructions">
                 <p>{meal.strInstructions}</p>
                 </div>
-
+                { meal.strYoutube
+				? 
+				src=`https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}`>
+				
+				: ''
+		}
+	`;
             </div>
         )
     }
