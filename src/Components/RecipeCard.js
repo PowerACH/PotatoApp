@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Container, Row, Col} from 'react-bootstrap'
 import '../App.css'
 
 export default class RecipeCard extends Component {
@@ -30,14 +31,14 @@ export default class RecipeCard extends Component {
             }
             }
         return (
-            <div className = "single-meal-container">
-            <div className = "single-meal-name">
-                    <h1>{meal.strMeal}</h1>
-                </div>
-                <div className = "single-meal-image">
-                    <img src={meal.strMealThumb} alt="meal"/>
-                </div>
-                <div className = "ingredient-list">
+            <Container className = "single-meal-container">
+                <Row>
+                <Col xs={6} md={4}>
+                    <img className="recipe-image" src={meal.strMealThumb} alt="meal"/>
+                </Col>
+                <Col>
+                <h1 className = "single-meal-name">{meal.strMeal}</h1>
+                  <div className = "ingredient-list">
                     <h5><strong>Ingredients: </strong></h5>
                     <ul>
                         {
@@ -47,12 +48,13 @@ export default class RecipeCard extends Component {
                     </ul>
                     <h5><strong>Culture: </strong> {meal.strArea}</h5>
                     <h5><strong>Category: </strong> {meal.strCategory}</h5>
-                </div>
+                </div>  
+                </Col>
+                </Row>
                 <div className="meal-instructions">
                 <p>{meal.strInstructions}</p>
                 </div>
-                
-            </div>
+            </Container>
         )
     }
 }
