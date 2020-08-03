@@ -95,5 +95,12 @@
   list-style: none;
 }
 
+.meal-instructions {
+  margin-top: 30px;
+}
+
+.meal-instructions h6 {
+ margin-left: 35%;
+}
 
 
