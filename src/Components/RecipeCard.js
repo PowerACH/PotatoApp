@@ -52,13 +52,7 @@ export default class RecipeCard extends Component {
                 <div className="meal-instructions">
                 <p>{meal.strInstructions}</p>
                 </div>
-                { meal.strYoutube
-				? 
-				src=`https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}`>
-				
-				: ''
-		}
-	`;
+                
             </div>
         )
     }
