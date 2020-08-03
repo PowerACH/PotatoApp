@@ -50,10 +50,10 @@ export default class RecipeCard extends Component {
                 </div>  
                 </Col>
                 </Row>
-                <div className="meal-instructions">
+                <Row className="meal-instructions">
                 <p>{meal.strInstructions}</p>
-                </div>
                 <h6><strong>Culture: </strong> {meal.strArea} <strong>Category: </strong> {meal.strCategory}</h6>
+                </Row>
             </Container>
         )
     }
