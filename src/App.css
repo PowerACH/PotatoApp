@@ -73,3 +73,30 @@
   background-image: url(https://elvino.co.uk/wp-content/uploads/2016/03/Food-banner-2-700x232.jpg);
 }
 
+/* Recipe Card */
+
+.inner-container {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.single-meal-image img {
+  width: 40%;
+  height: 40%;
+  
+}
+
+.ingredient-list ul {
+  column-count: 2;
+}
+
+.ingredient-list li {
+  list-style: none;
+}
+
+.recipe-image {
+  width: 100%;
+  border: 2px black solid;
+}
+
