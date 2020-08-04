@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom'
 
 
 
-export default class Home extends React.Component {
+export default function Home() {
 
-    render() {
         return (
         <div className = "home-container">
             <div className = "main-container">
@@ -20,11 +19,10 @@ export default class Home extends React.Component {
                     </div>
                     <br />
                     
-                    <Link to = "/SearchRecipes" ><Button variant="dark" onClick={this.handleMenu}>Search Recipes</Button></Link>{' '}
-                    <Link to = "/GetStarted"><Button variant="outline-success">Get Started</Button></Link>{' '}
+                    <Link to = "/SearchRecipes" ><Button variant="dark">Search Recipes</Button></Link>{' '}
+                    {/* <Link to = "/GetStarted"><Button variant="outline-success">Get Started</Button></Link>{' '} */}
                 </div>
             </div>
         </div>
         )
     }
-}
