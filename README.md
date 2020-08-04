@@ -17,7 +17,7 @@ The user will be able to see the recipe card and recipe information.
 TheMealDB (https://www.themealdb.com/api.php)
 
 ### Wireframe
-![](public/wireframes/Wireframe1.png)
-![](public/wireframes/Wireframe3.png)
-![](public/wireframes/Wireframe4.png)
+![](public/wireframes/ScreenShot1.png)
+![](public/wireframes/ScreenShot2.png)
+![](public/wireframes/ScreenShot3.png)
 
