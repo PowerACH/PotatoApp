@@ -6,6 +6,7 @@ import SearchRecipes from './Components/SearchRecipes';
 import NavBar from './Components/NavBar';
 import GetStarted from './Components/GetStarted'
 import RecipeCard from './Components/RecipeCard';
+import RandomMeal from './Components/RandomMeal'
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/GetStarted">
           <GetStarted />
+        </Route>
+        <Route path="/Random">
+          <RandomMeal />
         </Route>
         <Route exact path="/recipe/:id" component={RecipeCard} />
         <Route path="*" component={Home} />
