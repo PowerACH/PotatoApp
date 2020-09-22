@@ -1,7 +1,7 @@
 # Potato
 
-### Link to Live Site
-    https://optimistic-chandrasekhar-803a50.netlify.app/
+### Deployed Site
+   Link: (https://optimistic-chandrasekhar-803a50.netlify.app/)
 
 ### Details
 A common problem in most households is not knowing what to eat for dinner. This program will solve that problem by providing recipe options based on the ingredients one already has or the ingredients they prefer.
